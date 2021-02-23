@@ -1,0 +1,16 @@
+{
+  "name": "eight-colors",
+  "version": "1.0.0",
+  "description": "eight colors",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cenfun/eight-colors.git"
+  },
+  "devDependencies": {
+    "eslint": "^7.20.0"
+  }
+}
