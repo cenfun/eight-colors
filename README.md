@@ -7,10 +7,10 @@ npm i eight-colors
 ```
 
 ## APIs
-* 8 colors: black, red, green, yellow, blue, magenta, cyan, white
-* other: reset, bold, faint, italic, underline, inverse, hidden, strike
-* remove color: remove
-
+* eight colors: black, red, green, yellow, blue, magenta, cyan, white
+* styles: reset, bold, faint, italic, underline, inverse, hidden, strike
+* remove color
+* log color
 ## Usage
 ```js
 const EC = require("eight-colors");
@@ -34,8 +34,17 @@ console.log(redString);
 const string = EC.remove(redString);
 console.log(string === "red string");
 
+//log color
+EC.logColor("string", "red");
+EC.logGreen('green string');
+EC.logRed('red string');
+EC.logCyan('cyan string');
+
 ```
 
 ## Changelog
+
+* 1.0.1
+    * added log color API
 
 * 1.0.0
