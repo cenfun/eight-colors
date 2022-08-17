@@ -128,6 +128,8 @@ Usage is the same as above, and provides an additional UMD bundle (1.35 KB)
 ```
 ![](/scripts/browser.png)
 
+* firefox does not support 
+
 ## Links
 - [https://en.wikipedia.org/wiki/ANSI_escape_code](https://en.wikipedia.org/wiki/ANSI_escape_code)
 - [https://handwiki.org/wiki/ANSI_escape_code](https://handwiki.org/wiki/ANSI_escape_code)
