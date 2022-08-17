@@ -1,7 +1,5 @@
 # Eight Colors
 > Eight colors for the terminal console
-
-![](/scripts/eight-colors.png)
 ## Install
 ```
 npm i eight-colors
@@ -107,7 +105,7 @@ EC.strike(String)
 EC.remove(String)
 
 EC.log(String)
-EC.logColor(String)
+EC.logColor(String, Color)
 
 EC.logBlack(String)
 EC.logRed(String)
@@ -118,6 +116,9 @@ EC.logMagenta(String)
 EC.logCyan(String)
 EC.logWhite(String)
 ```
+
+
+![](/scripts/eight-colors.png)
 
 ## Link
 - [https://en.wikipedia.org/wiki/ANSI_escape_code](https://en.wikipedia.org/wiki/ANSI_escape_code)
