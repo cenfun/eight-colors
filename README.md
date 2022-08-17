@@ -1,5 +1,5 @@
 # Eight Colors
-> Eight colors for the terminal console
+> Eight colors for the console
 ## Install
 ```
 npm i eight-colors

@@ -1,0 +1,14 @@
+{
+    "name": "eight-colors",
+    "version": "1.0.1",
+    "description": "Eight colors for the terminal console",
+    "private": true,
+    "main": "dist/eight-colors.js",
+    "files": [
+        "dist"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/cenfun/eight-colors.git"
+    }
+}

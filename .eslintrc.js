@@ -17,7 +17,9 @@ module.exports = {
         'page': true
     },
 
-    'plugins': [],
+    'plugins': [
+        'html'
+    ],
 
     'extends': [
         'plus'

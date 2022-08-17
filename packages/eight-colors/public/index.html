@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <link rel="icon" href="data:,">
+    <title>Eight Colors</title>
+    <style>
+        html,
+        body {
+            font-size: 14px;
+            font-family: arial, sans-serif;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        a:hover {
+            color: deepskyblue;
+        }
+    </style>
+    <!--inject:start-->
+    <script src="../dist/eight-colors.js"></script>
+    <!--inject:end-->
+</head>
+
+<body>
+    <script>
+        const EC = window['eight-colors'];
+
+        console.log(EC.green('green string'));
+
+        EC.logRed('red string');
+
+    </script>
+
+</body>
+
+</html>
