@@ -1,3 +1,6 @@
+//starfall-cli config
+//https://github.com/cenfun/starfall-cli
+
 const fs = require('fs');
 const path = require('path');
 

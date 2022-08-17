@@ -117,13 +117,21 @@ EC.logCyan(String)
 EC.logWhite(String)
 ```
 
+## Browser Console
+```html
+<script src="path-to/eight-colors/dist/eight-colors.js"></script>
+<script>
+    const EC = window['eight-colors'];
+    console.log(EC.red('red string'));
+</script>
+```
+![](/scripts/browser.png)
 
-![](/scripts/eight-colors.png)
-
-## Link
+## Links
 - [https://en.wikipedia.org/wiki/ANSI_escape_code](https://en.wikipedia.org/wiki/ANSI_escape_code)
 - [https://handwiki.org/wiki/ANSI_escape_code](https://handwiki.org/wiki/ANSI_escape_code)
 
+![](/scripts/eight-colors.png)
 ## Changelog
 
 * 1.0.1
