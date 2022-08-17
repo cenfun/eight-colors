@@ -1,7 +1,7 @@
 {
     "name": "eight-colors",
     "version": "1.0.1",
-    "description": "eight colors",
+    "description": "Eight colors for the terminal console",
     "main": "lib/index.js",
     "files": [
         "lib"
@@ -11,10 +11,11 @@
         "url": "git+https://github.com/cenfun/eight-colors.git"
     },
     "scripts": {
-        "test": "node ./test/test.js"
+        "test": "node ./scripts/test.js"
     },
+    "dependencies": {},
     "devDependencies": {
-        "eslint": "^8.13.0"
-    },
-    "dependencies": {}
+        "eslint": "^8.22.0",
+        "eslint-config-plus": "^1.0.3"
+    }
 }
