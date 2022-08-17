@@ -1,6 +1,6 @@
 {
     "name": "eight-colors",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Eight colors for the console",
     "main": "lib/index.js",
     "browser": {
