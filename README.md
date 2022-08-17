@@ -118,6 +118,7 @@ EC.logWhite(String)
 ```
 
 ## Browser Console
+Usage is the same as above, and provides an additional UMD bundle (1.35 KB)
 ```html
 <script src="path-to/eight-colors/dist/eight-colors.js"></script>
 <script>
@@ -132,7 +133,10 @@ EC.logWhite(String)
 - [https://handwiki.org/wiki/ANSI_escape_code](https://handwiki.org/wiki/ANSI_escape_code)
 
 ![](/scripts/eight-colors.png)
-## Changelog
+## CHANGELOG
+
+* 1.0.2
+    * added browser bundle
 
 * 1.0.1
     * added log color API
