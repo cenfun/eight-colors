@@ -17,6 +17,9 @@ npm i eight-colors
 ```js
 const EC = require("eight-colors");
 
+//check out all APIs
+console.log(EC);
+
 //text color
 console.log(EC.red('red string'));
 
@@ -49,8 +52,11 @@ EC.logCyan('log cyan');
 EC.logBlack('log black');
 EC.logWhite('log white');
 
-//check out all APIs
-console.log(EC);
+EC.log('log 2 arguments', '2');
+EC.logGreen('logGreen 2 arguments', '2');
+EC.logMagenta('logMagenta 3 arguments', '2', '3');
+EC.logColor('logColor 2 arguments with color', '2', 'red');
+EC.logColor('logColor 2 arguments without color', '2');
 
 ```
 ![](/scripts/screenshots.png)
@@ -136,6 +142,9 @@ Usage is the same as above, and provides an additional UMD bundle (1.35 KB)
 
 ![](/scripts/eight-colors.png)
 ## CHANGELOG
+
+* 1.0.3
+    * fixed API multiple arguments
 
 * 1.0.2
     * added browser bundle
