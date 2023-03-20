@@ -1,5 +1,7 @@
 # Eight Colors
 > Eight colors for the console
+
+![](/scripts/eight-colors.png)
 ## Install
 ```
 npm i eight-colors
@@ -140,7 +142,6 @@ Usage is the same as above, and provides an additional UMD bundle (1.35 KB)
 - [https://en.wikipedia.org/wiki/ANSI_escape_code](https://en.wikipedia.org/wiki/ANSI_escape_code)
 - [https://handwiki.org/wiki/ANSI_escape_code](https://handwiki.org/wiki/ANSI_escape_code)
 
-![](/scripts/eight-colors.png)
 ## CHANGELOG
 
 * 1.0.3
