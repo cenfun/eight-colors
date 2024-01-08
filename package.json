@@ -2,10 +2,20 @@
     "name": "eight-colors",
     "version": "1.0.3",
     "description": "Eight colors for the console",
-    "main": "lib/index.js",
+    "main": "./lib/index.js",
     "browser": {
-        "eight-colors": "dist/eight-colors.js"
+        "eight-colors": "./dist/eight-colors.js"
     },
+    "exports": {
+        ".": {
+            "types": "./lib/index.d.ts",
+            "import": "./lib/index.mjs",
+            "require": "./lib/index.js",
+            "default": "./lib/index.js"
+        },
+        "./package.json": "./package.json"
+    },
+    "types": "./lib/index.d.ts",
     "scripts": {
         "test": "node ./scripts/test.js",
         "build": "sf lint && sf b -p",
@@ -22,7 +32,7 @@
     },
     "dependencies": {},
     "devDependencies": {
-        "eslint": "^8.36.0",
+        "eslint": "^8.56.0",
         "eslint-config-plus": "^1.0.6",
         "eslint-plugin-html": "^7.1.0"
     }

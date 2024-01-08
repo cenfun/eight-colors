@@ -1,5 +1,5 @@
-//starfall-cli config
-//https://github.com/cenfun/starfall-cli
+// starfall-cli config
+// https://github.com/cenfun/starfall-cli
 
 const fs = require('fs');
 const path = require('path');
@@ -7,6 +7,16 @@ const path = require('path');
 module.exports = {
 
     build: {
+
+        before: (item, Util) => {
+            console.log('before build');
+
+            if (item.production) {
+                item.devtool = false;
+            }
+
+            return 0;
+        },
 
         afterAll: (o, Util) => {
 

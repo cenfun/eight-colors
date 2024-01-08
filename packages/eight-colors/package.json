@@ -2,15 +2,16 @@
     "name": "eight-colors",
     "version": "1.0.3",
     "description": "Eight colors for the terminal console",
+    "private": true,
     "main": "dist/eight-colors.js",
     "files": [
         "dist"
     ],
+    "license": "MIT",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/cenfun/eight-colors.git"
     },
     "dependencies": {},
-    "devDependencies": {},
-    "private": true
+    "devDependencies": {}
 }

@@ -19,34 +19,51 @@ npm i eight-colors
 ```js
 const EC = require("eight-colors");
 
-//check out all APIs
+
+// check out all APIs
 console.log(EC);
 
-//text color
+// print all APIs
+const print = (parent, ls) => {
+    if (typeof parent === 'function') {
+        console.log(`${ls.join('.')}(String)`);
+        return;
+    }
+
+    for (const k in parent) {
+        print(parent[k], ls.concat(k));
+    }
+
+};
+
+print(EC, ['EC']);
+
+// text color
 console.log(EC.red('red string'));
 
-//background color
+// background color
 console.log(EC.bg.red('red background'));
 
-//bright color
+// bright color
 console.log(EC.br.red('bright red string'));
 
-//bright background color
+// bright background color
 console.log(EC.br.bg.red('bright red background'));
 
-//style
+// style
 console.log(EC.italic('italic text'));
 console.log(EC.underline('underline text'));
 console.log(EC.green(EC.underline('green underline text')));
 
-//remove color
+// remove color
 const redString = EC.red('red string');
 console.log(redString);
 const string = EC.remove(redString);
 console.assert(string === 'red string');
 
-//log color
-EC.logColor('string', 'red');
+// log color
+const res = EC.logColor('string1', 'string2', 'red');
+console.assert(EC.remove(res) === 'string1 string2');
 
 EC.logGreen('log green');
 EC.logRed('log red');
@@ -59,7 +76,6 @@ EC.logGreen('logGreen 2 arguments', '2');
 EC.logMagenta('logMagenta 3 arguments', '2', '3');
 EC.logColor('logColor 2 arguments with color', '2', 'red');
 EC.logColor('logColor 2 arguments without color', '2');
-
 ```
 ![](/scripts/screenshots.png)
 
@@ -113,7 +129,7 @@ EC.strike(String)
 EC.remove(String)
 
 EC.log(String)
-EC.logColor(String, Color)
+EC.logColor(String, ColorName)
 
 EC.logBlack(String)
 EC.logRed(String)
@@ -144,13 +160,16 @@ Usage is the same as above, and provides an additional UMD bundle (1.35 KB)
 
 ## CHANGELOG
 
+* 1.1.0
+    - added types
+
 * 1.0.3
-    * fixed API multiple arguments
+    - fixed API multiple arguments
 
 * 1.0.2
-    * added browser bundle
+    - added browser bundle
 
 * 1.0.1
-    * added log color API
+    - added log color API
 
 * 1.0.0
