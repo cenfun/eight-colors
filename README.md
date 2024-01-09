@@ -138,6 +138,9 @@ Usage is the same as above, and provides an additional UMD bundle (1.35 KB)
 
 ## CHANGELOG
 
+* 1.2.0
+    - remove useless logColor
+
 * 1.1.1
     - fixed types
 
