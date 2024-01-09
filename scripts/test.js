@@ -7,7 +7,7 @@ module.exports = (EC) => {
         for (const k in parent) {
             const item = parent[k];
             if (typeof item === 'function') {
-                list.push(paths.concat(k).join('.'));
+                list.push(`${paths.concat(k).join('.')}(str)`);
                 continue;
             }
 

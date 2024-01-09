@@ -19,25 +19,6 @@ npm i eight-colors
 ```js
 const EC = require("eight-colors");
 
-
-// check out all APIs
-console.log(EC);
-
-// print all APIs
-const print = (parent, ls) => {
-    if (typeof parent === 'function') {
-        console.log(`${ls.join('.')}(String)`);
-        return;
-    }
-
-    for (const k in parent) {
-        print(parent[k], ls.concat(k));
-    }
-
-};
-
-print(EC, ['EC']);
-
 // text color
 console.log(EC.red('red string'));
 
@@ -74,71 +55,70 @@ EC.logWhite('log white');
 EC.log('log 2 arguments', '2');
 EC.logGreen('logGreen 2 arguments', '2');
 EC.logMagenta('logMagenta 3 arguments', '2', '3');
-EC.logColor('logColor 2 arguments with color', '2', 'red');
-EC.logColor('logColor 2 arguments without color', '2');
+
 ```
 ![](/scripts/screenshots.png)
 
-## All APIs
+## APIs
 ```js
-EC.black(String)
-EC.red(String)
-EC.green(String)
-EC.yellow(String)
-EC.blue(String)
-EC.magenta(String)
-EC.cyan(String)
-EC.white(String)
+EC.black(str)
+EC.red(str)
+EC.green(str)
+EC.yellow(str)
+EC.blue(str)
+EC.magenta(str)
+EC.cyan(str)
+EC.white(str)
 
-EC.bg.black(String)
-EC.bg.red(String)
-EC.bg.green(String)
-EC.bg.yellow(String)
-EC.bg.blue(String)
-EC.bg.magenta(String)
-EC.bg.cyan(String)
-EC.bg.white(String)
+EC.bg.black(str)
+EC.bg.red(str)
+EC.bg.green(str)
+EC.bg.yellow(str)
+EC.bg.blue(str)
+EC.bg.magenta(str)
+EC.bg.cyan(str)
+EC.bg.white(str)
 
-EC.br.black(String)
-EC.br.red(String)
-EC.br.green(String)
-EC.br.yellow(String)
-EC.br.blue(String)
-EC.br.magenta(String)
-EC.br.cyan(String)
-EC.br.white(String)
+EC.br.black(str)
+EC.br.red(str)
+EC.br.green(str)
+EC.br.yellow(str)
+EC.br.blue(str)
+EC.br.magenta(str)
+EC.br.cyan(str)
+EC.br.white(str)
 
-EC.br.bg.black(String)
-EC.br.bg.red(String)
-EC.br.bg.green(String)
-EC.br.bg.yellow(String)
-EC.br.bg.blue(String)
-EC.br.bg.magenta(String)
-EC.br.bg.cyan(String)
-EC.br.bg.white(String)
+EC.br.bg.black(str)
+EC.br.bg.red(str)
+EC.br.bg.green(str)
+EC.br.bg.yellow(str)
+EC.br.bg.blue(str)
+EC.br.bg.magenta(str)
+EC.br.bg.cyan(str)
+EC.br.bg.white(str)
 
-EC.reset(String)
-EC.bold(String)
-EC.faint(String)
-EC.italic(String)
-EC.underline(String)
-EC.inverse(String)
-EC.hidden(String)
-EC.strike(String)
+EC.reset(str)
+EC.bold(str)
+EC.faint(str)
+EC.italic(str)
+EC.underline(str)
+EC.inverse(str)
+EC.hidden(str)
+EC.strike(str)
 
-EC.remove(String)
+EC.remove(str)
 
-EC.log(String)
-EC.logColor(String, ColorName)
+EC.log(str)
+EC.logColor(str, ColorName)
 
-EC.logBlack(String)
-EC.logRed(String)
-EC.logGreen(String)
-EC.logYellow(String)
-EC.logBlue(String)
-EC.logMagenta(String)
-EC.logCyan(String)
-EC.logWhite(String)
+EC.logBlack(str)
+EC.logRed(str)
+EC.logGreen(str)
+EC.logYellow(str)
+EC.logBlue(str)
+EC.logMagenta(str)
+EC.logCyan(str)
+EC.logWhite(str)
 ```
 
 ## Browser Console
@@ -159,6 +139,9 @@ Usage is the same as above, and provides an additional UMD bundle (1.35 KB)
 - [https://handwiki.org/wiki/ANSI_escape_code](https://handwiki.org/wiki/ANSI_escape_code)
 
 ## CHANGELOG
+
+* 1.1.1
+    - fixed types
 
 * 1.1.0
     - added types
