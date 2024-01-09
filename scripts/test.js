@@ -45,7 +45,7 @@ module.exports = (EC) => {
     console.assert(string === 'red string');
 
     // log color
-    const res = EC.logColor('string1', 'string2', 'red');
+    const res = EC.logRed('string1', 'string2');
     console.assert(EC.remove(res) === 'string1 string2');
 
     EC.logGreen('log green');
@@ -57,7 +57,5 @@ module.exports = (EC) => {
     EC.log('log 2 arguments', '2');
     EC.logGreen('logGreen 2 arguments', '2');
     EC.logMagenta('logMagenta 3 arguments', '2', '3');
-    EC.logColor('logColor 2 arguments with color', '2', 'red');
-    EC.logColor('logColor 2 arguments without color', '2');
 
 };

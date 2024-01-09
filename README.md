@@ -43,7 +43,7 @@ const string = EC.remove(redString);
 console.assert(string === 'red string');
 
 // log color
-const res = EC.logColor('string1', 'string2', 'red');
+const res = EC.logRed('string1', 'string2');
 console.assert(EC.remove(res) === 'string1 string2');
 
 EC.logGreen('log green');
@@ -109,8 +109,6 @@ EC.strike(str)
 EC.remove(str)
 
 EC.log(str)
-EC.logColor(str, ColorName)
-
 EC.logBlack(str)
 EC.logRed(str)
 EC.logGreen(str)

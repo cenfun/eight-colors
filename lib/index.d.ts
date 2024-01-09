@@ -2,7 +2,7 @@
  * Eight Colors
  */
 
-export type ColorHandler = (str: string) => string
+type ColorHandler = (str: string) => string
 
 export const black: ColorHandler;
 export const red: ColorHandler;
@@ -14,27 +14,27 @@ export const cyan: ColorHandler;
 export const white: ColorHandler;
 
 type BG = {
-    black,
-    red,
-    green,
-    yellow,
-    blue,
-    magenta,
-    cyan,
-    white
+    black: ColorHandler;
+    red: ColorHandler;
+    green: ColorHandler;
+    yellow: ColorHandler;
+    blue: ColorHandler;
+    magenta: ColorHandler;
+    cyan: ColorHandler;
+    white: ColorHandler;
 }
 
 export const bg: BG;
 
 type BR = {
-    black,
-    red,
-    green,
-    yellow,
-    blue,
-    magenta,
-    cyan,
-    white,
+    black: ColorHandler;
+    red: ColorHandler;
+    green: ColorHandler;
+    yellow: ColorHandler;
+    blue: ColorHandler;
+    magenta: ColorHandler;
+    cyan: ColorHandler;
+    white: ColorHandler;
 
     bg: BG
 }
@@ -54,12 +54,10 @@ export const strike: ColorHandler;
 export const remove: ColorHandler;
 
 // console log
-export function log(...args: string[]): void;
+type LogHandler = (str: string) => void;
+export const log: LogHandler;
 
-export type ColorName = 'black' | 'red' | 'green' | 'yellow' | 'blue' | 'magenta' | 'cyan' | 'white';
-export function logColor<T extends string[]>(...args: [...T, ColorName]): string;
-
-export type ColorLogHandler = (...args: string[]) => string;
+type ColorLogHandler = (...args: any[]) => string;
 
 export const logBlack: ColorLogHandler;
 export const logRed: ColorLogHandler;
@@ -69,3 +67,43 @@ export const logBlue: ColorLogHandler;
 export const logMagenta: ColorLogHandler;
 export const logCyan: ColorLogHandler;
 export const logWhite: ColorLogHandler;
+
+type EightColors = {
+    black: ColorHandler;
+    red: ColorHandler;
+    green: ColorHandler;
+    yellow: ColorHandler;
+    blue: ColorHandler;
+    magenta: ColorHandler;
+    cyan: ColorHandler;
+    white: ColorHandler;
+
+    bg: BG,
+    br: BR,
+
+    reset: ColorHandler;
+    bold: ColorHandler;
+    faint: ColorHandler;
+    italic: ColorHandler;
+    underline: ColorHandler;
+    inverse: ColorHandler;
+    hidden: ColorHandler;
+    strike: ColorHandler;
+
+    remove: ColorHandler;
+
+    log: LogHandler,
+
+    logBlack: ColorLogHandler,
+    logRed: ColorLogHandler,
+    logGreen: ColorLogHandler,
+    logYellow: ColorLogHandler,
+    logBlue: ColorLogHandler,
+    logMagenta: ColorLogHandler,
+    logCyan: ColorLogHandler,
+    logWhite: ColorLogHandler,
+}
+
+declare const EC: EightColors
+
+export default EC;

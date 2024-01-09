@@ -32,32 +32,31 @@
     <script>
         const EC = window['eight-colors'];
 
-        //text color
+        // text color
         console.log(EC.red('red string'));
 
-        //background color
+        // background color
         console.log(EC.bg.red('red background'));
 
-        //bright color
+        // bright color
         console.log(EC.br.red('bright red string'));
 
-        //bright background color
+        // bright background color
         console.log(EC.br.bg.red('bright red background'));
 
-        //style
+        // style
         console.log(EC.italic('italic text'));
         console.log(EC.underline('underline text'));
         console.log(EC.green(EC.underline('green underline text')));
 
-        //remove color
+        // remove color
         const redString = EC.red('red string');
         console.log(redString);
         const string = EC.remove(redString);
         console.assert(string === 'red string');
 
-        //log color
-        EC.logColor('string', 'red');
-
+        // log color
+        EC.logRed('string');
         EC.logGreen('log green');
         EC.logRed('log red');
         EC.logCyan('log cyan');
@@ -67,8 +66,6 @@
         EC.log('log 2 arguments', '2');
         EC.logGreen('logGreen 2 arguments', '2');
         EC.logMagenta('logMagenta 3 arguments', '2', '3');
-        EC.logColor('logColor 2 arguments with color', '2', 'red');
-        EC.logColor('logColor 2 arguments without color', '2');
 
     </script>
 
