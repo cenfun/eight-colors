@@ -1,16 +1,19 @@
 /**
  * Eight Colors
  */
-export function black(str: string): string;
-export function red(str: string): string;
-export function green(str: string): string;
-export function yellow(str: string): string;
-export function blue(str: string): string;
-export function magenta(str: string): string;
-export function cyan(str: string): string;
-export function white(str: string): string;
 
-export type bg = {
+export type ColorHandler = (str: string) => string
+
+export const black: ColorHandler;
+export const red: ColorHandler;
+export const green: ColorHandler;
+export const yellow: ColorHandler;
+export const blue: ColorHandler;
+export const magenta: ColorHandler;
+export const cyan: ColorHandler;
+export const white: ColorHandler;
+
+type BG = {
     black,
     red,
     green,
@@ -21,7 +24,9 @@ export type bg = {
     white
 }
 
-export type br = {
+export const bg: BG;
+
+type BR = {
     black,
     red,
     green,
@@ -31,20 +36,22 @@ export type br = {
     cyan,
     white,
 
-    bg
+    bg: BG
 }
 
-export function reset(str: string): string;
-export function bold(str: string): string;
-export function faint(str: string): string;
-export function italic(str: string): string;
-export function underline(str: string): string;
-export function inverse(str: string): string;
-export function hidden(str: string): string;
-export function strike(str: string): string;
+export const br: BR;
+
+export const reset: ColorHandler;
+export const bold: ColorHandler;
+export const faint: ColorHandler;
+export const italic: ColorHandler;
+export const underline: ColorHandler;
+export const inverse: ColorHandler;
+export const hidden: ColorHandler;
+export const strike: ColorHandler;
 
 // remove color
-export function remove(str: string): string;
+export const remove: ColorHandler;
 
 // console log
 export function log(...args: string[]): void;
@@ -52,49 +59,13 @@ export function log(...args: string[]): void;
 export type ColorName = 'black' | 'red' | 'green' | 'yellow' | 'blue' | 'magenta' | 'cyan' | 'white';
 export function logColor<T extends string[]>(...args: [...T, ColorName]): string;
 
-export function logBlack(...args: string[]): string;
-export function logRed(...args: string[]): string;
-export function logGreen(...args: string[]): string;
-export function logYellow(...args: string[]): string;
-export function logBlue(...args: string[]): string;
-export function logMagenta(...args: string[]): string;
-export function logCyan(...args: string[]): string;
-export function logWhite(...args: string[]): string;
+export type ColorLogHandler = (...args: string[]) => string;
 
-export type EC = {
-    black,
-    red,
-    green,
-    yellow,
-    blue,
-    magenta,
-    cyan,
-    white,
-
-    bg,
-    br,
-
-    reset,
-    bold,
-    faint,
-    italic,
-    underline,
-    inverse,
-    hidden,
-    strike,
-
-    remove,
-
-    log,
-
-    logBlack,
-    logRed,
-    logGreen,
-    logYellow,
-    logBlue,
-    logMagenta,
-    logCyan,
-    logWhite
-}
-
-export default EC;
+export const logBlack: ColorLogHandler;
+export const logRed: ColorLogHandler;
+export const logGreen: ColorLogHandler;
+export const logYellow: ColorLogHandler;
+export const logBlue: ColorLogHandler;
+export const logMagenta: ColorLogHandler;
+export const logCyan: ColorLogHandler;
+export const logWhite: ColorLogHandler;

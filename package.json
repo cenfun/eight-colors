@@ -17,7 +17,8 @@
     },
     "types": "./lib/index.d.ts",
     "scripts": {
-        "test": "node ./scripts/test.js",
+        "test": "npm run link && node ./scripts/test.cjs && node ./scripts/test.mjs",
+        "link": "sf link ./ -f",
         "build": "sf lint && sf b -p",
         "patch": "npm run build && sf publish patch -r"
     },
