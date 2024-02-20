@@ -2,24 +2,32 @@
 module.exports = (EC) => {
 
     // print all APIs
-    const print = (parent, list, paths) => {
+    const print = (parent, paths) => {
 
+        const list = [];
+        const subs = [];
         for (const k in parent) {
             const item = parent[k];
             if (typeof item === 'function') {
                 list.push(`${paths.concat(k).join('.')}(str)`);
                 continue;
             }
-
-            print(item, list, paths.concat(k));
-
+            subs.push({
+                item,
+                k
+            });
         }
+
+        console.log(list);
+
+        subs.forEach((it) => {
+            const { item, k } = it;
+            print(item, paths.concat(k));
+        });
 
     };
 
-    const list = [];
-    print(EC, list, ['EC']);
-    console.log(list);
+    print(EC, ['EC']);
 
     // text color
     console.log(EC.red('red string'));
@@ -48,14 +56,20 @@ module.exports = (EC) => {
     const res = EC.logRed('string1', 'string2');
     console.assert(EC.remove(res) === 'string1 string2');
 
-    EC.logGreen('log green');
     EC.logRed('log red');
+    EC.logGreen('log green');
+    EC.logYellow('log yellow');
     EC.logCyan('log cyan');
-    EC.logBlack('log black');
     EC.logWhite('log white');
 
-    EC.log('log 2 arguments', '2');
+    EC.log('log 2 arguments', EC.red('2'));
     EC.logGreen('logGreen 2 arguments', '2');
-    EC.logMagenta('logMagenta 3 arguments', '2', '3');
+    EC.logMagenta('logMagenta 3 arguments', EC.red('2'), '3');
+
+    // disabled color
+    EC.disabled = true;
+    EC.logRed('disabled = true log default');
+    EC.disabled = false;
+    EC.logRed('disabled = false log red');
 
 };

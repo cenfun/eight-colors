@@ -56,6 +56,12 @@ EC.log('log 2 arguments', '2');
 EC.logGreen('logGreen 2 arguments', '2');
 EC.logMagenta('logMagenta 3 arguments', '2', '3');
 
+// disabled color
+EC.disabled = true;
+EC.logRed('disabled = true log default');
+EC.disabled = false;
+EC.logRed('disabled = false log red');
+
 ```
 ![](/scripts/screenshots.png)
 
@@ -117,6 +123,8 @@ EC.logBlue(str)
 EC.logMagenta(str)
 EC.logCyan(str)
 EC.logWhite(str)
+
+EC.disabled = true|false
 ```
 
 ## Browser Console
@@ -137,6 +145,9 @@ Usage is the same as above, and provides an additional UMD bundle (1.35 KB)
 - [https://handwiki.org/wiki/ANSI_escape_code](https://handwiki.org/wiki/ANSI_escape_code)
 
 ## CHANGELOG
+
+* 1.3.0
+    - added `disabled` property, defaults to `false`
 
 * 1.2.1
     - fixed types for commonjs

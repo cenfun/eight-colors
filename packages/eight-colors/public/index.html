@@ -63,9 +63,15 @@
         EC.logBlack('log black');
         EC.logWhite('log white');
 
-        EC.log('log 2 arguments', '2');
+        EC.log('log 2 arguments', EC.red('2'));
         EC.logGreen('logGreen 2 arguments', '2');
-        EC.logMagenta('logMagenta 3 arguments', '2', '3');
+        EC.logMagenta('logMagenta 3 arguments', EC.red('2'), '3');
+
+        // disabled color
+        EC.disabled = true;
+        EC.logRed('disabled = true log default');
+        EC.disabled = false;
+        EC.logRed('disabled = false log red');
 
     </script>
 

@@ -21,6 +21,8 @@ type ColorLogHandler = (...args: any[]) => string;
 
 declare interface EightColors extends IEightColors {
 
+    disabled: boolean;
+
     bg: IEightColors,
 
     br: BR,
