@@ -8,11 +8,16 @@ npm i eight-colors
 ```
 
 ## Features
-* Eight Colors: black, red, green, yellow, blue, magenta, cyan, white
+* Eight Colors: `black`, `red`, `green`, `yellow`, `blue`, `magenta`, `cyan`, `white`
 * Background and Bright
 * Styles: reset, bold, faint, italic, underline, inverse, hidden, strike
 * Remove colors
 * Log colors
+* ESM/CJS
+* TypeScript
+* env `NO_COLOR` `FORCE_COLOR` and flags `--no-color` `--color`
+* 0 dependencies
+* 2.6K Size
 
 
 ## Usage
@@ -143,31 +148,3 @@ Usage is the same as above, and provides an additional UMD bundle (1.35 KB)
 ## Links
 - [https://en.wikipedia.org/wiki/ANSI_escape_code](https://en.wikipedia.org/wiki/ANSI_escape_code)
 - [https://handwiki.org/wiki/ANSI_escape_code](https://handwiki.org/wiki/ANSI_escape_code)
-
-## CHANGELOG
-
-* 1.3.0
-    - added `disabled` property, defaults to `false`
-
-* 1.2.1
-    - fixed types for commonjs
-
-* 1.2.0
-    - remove useless logColor
-
-* 1.1.1
-    - fixed types
-
-* 1.1.0
-    - added types
-
-* 1.0.3
-    - fixed API multiple arguments
-
-* 1.0.2
-    - added browser bundle
-
-* 1.0.1
-    - added log color API
-
-* 1.0.0
