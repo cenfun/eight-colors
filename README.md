@@ -2,9 +2,8 @@
 > Eight colors for the console
 
 [![](https://img.shields.io/npm/v/eight-colors)](https://www.npmjs.com/package/eight-colors)
-[![](https://devimg.vercel.app/npm/downloads/eight-colors?label={total}%20downloads/month)](https://www.npmjs.com/package/eight-colors)
-![](https://img.shields.io/librariesio/github/cenfun/eight-colors)
 ![](https://img.shields.io/github/license/cenfun/eight-colors)
+[![](https://devimg.vercel.app/npm/downloads/eight-colors?label={total}%20downloads/month)](https://www.npmjs.com/package/eight-colors)
 
 ![](/scripts/eight-colors.png)
 ## Install
