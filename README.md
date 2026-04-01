@@ -1,80 +1,102 @@
 # Eight Colors
-> Eight colors for the console
+> A tiny ANSI color helper for terminal output.
 
 [![](https://img.shields.io/npm/v/eight-colors)](https://www.npmjs.com/package/eight-colors)
 ![](https://img.shields.io/github/license/cenfun/eight-colors)
 [![](https://devimg.vercel.app/npm/downloads/eight-colors?label={total}%20downloads/month)](https://www.npmjs.com/package/eight-colors)
 
 ![](/scripts/eight-colors.png)
+
 ## Install
-```
+```bash
 npm i eight-colors
 ```
 
 ## Features
-* Eight Colors: `black`, `red`, `green`, `yellow`, `blue`, `magenta`, `cyan`, `white`
-* Background and Bright
-* Styles: reset, bold, faint, italic, underline, inverse, hidden, strike
-* Remove colors
-* Log colors
-* ESM/CJS
-* TypeScript
-* env `NO_COLOR` `FORCE_COLOR` and flags `--no-color` `--color`
-* 0 dependencies
-* 2.6K Size
+* Eight basic colors: `black`, `red`, `green`, `yellow`, `blue`, `magenta`, `cyan`, `white`
+* Background colors via `EC.bg.*`
+* Bright colors via `EC.br.*`
+* Bright background colors via `EC.br.bg.*`
+* Text styles: `reset`, `bold`, `faint`, `italic`, `underline`, `inverse`, `hidden`, `strike`
+* Remove ANSI escape sequences with `EC.remove()`
+* Colored logging helpers such as `EC.logRed()`
+* CJS, ESM, TypeScript types, and browser bundle
+* Supports `NO_COLOR`, `FORCE_COLOR`, `--no-color`, and `--color`
+* Zero dependencies
 
-
-## Usage
+## Quick Start
+CommonJS:
 ```js
-const EC = require("eight-colors");
+const EC = require('eight-colors');
 
-// text color
 console.log(EC.red('red string'));
-
-// background color
 console.log(EC.bg.red('red background'));
-
-// bright color
 console.log(EC.br.red('bright red string'));
-
-// bright background color
 console.log(EC.br.bg.red('bright red background'));
-
-// style
 console.log(EC.italic('italic text'));
 console.log(EC.underline('underline text'));
 console.log(EC.green(EC.underline('green underline text')));
+```
 
-// remove color
+ESM:
+```js
+import EC from 'eight-colors';
+
+console.log(EC.red('red string'));
+console.log(EC.br.bg.red('bright red background'));
+```
+
+More examples:
+```js
 const redString = EC.red('red string');
 console.log(redString);
-const string = EC.remove(redString);
-console.assert(string === 'red string');
 
-// log color
-const res = EC.logRed('string1', 'string2');
-console.assert(EC.remove(res) === 'string1 string2');
+const plainString = EC.remove(redString);
+console.assert(plainString === 'red string');
 
-EC.logGreen('log green');
+const logged = EC.logRed('string1', 'string2');
+console.assert(EC.remove(logged) === 'string1 string2');
+
 EC.logRed('log red');
+EC.logGreen('log green');
+EC.logYellow('log yellow');
 EC.logCyan('log cyan');
-EC.logBlack('log black');
 EC.logWhite('log white');
 
-EC.log('log 2 arguments', '2');
+EC.log('log 2 arguments', EC.red('2'));
 EC.logGreen('logGreen 2 arguments', '2');
-EC.logMagenta('logMagenta 3 arguments', '2', '3');
+EC.logMagenta('logMagenta 3 arguments', EC.red('2'), '3');
 
-// disabled color
 EC.disabled = true;
 EC.logRed('disabled = true log default');
+
 EC.disabled = false;
 EC.logRed('disabled = false log red');
-
 ```
+
 ![](/scripts/screenshots.png)
 
-## APIs
+## Color Control
+`EC.disabled` controls whether ANSI escape sequences are added at runtime.
+
+```js
+EC.disabled = true;
+EC.logRed('disabled = true log default');
+
+EC.disabled = false;
+EC.logRed('disabled = false log red');
+```
+
+On module initialization, `eight-colors` also reads environment variables and CLI flags:
+
+* `NO_COLOR` or `--no-color`: disable colors
+* `FORCE_COLOR` or `--color`: enable colors
+* If both disabled and forced options are present, disabled takes precedence
+
+The environment check is based on key presence, not on a specific value.
+
+## API
+Text colors:
 ```js
 EC.black(str)
 EC.red(str)
@@ -84,7 +106,10 @@ EC.blue(str)
 EC.magenta(str)
 EC.cyan(str)
 EC.white(str)
+```
 
+Background colors:
+```js
 EC.bg.black(str)
 EC.bg.red(str)
 EC.bg.green(str)
@@ -93,7 +118,10 @@ EC.bg.blue(str)
 EC.bg.magenta(str)
 EC.bg.cyan(str)
 EC.bg.white(str)
+```
 
+Bright colors:
+```js
 EC.br.black(str)
 EC.br.red(str)
 EC.br.green(str)
@@ -102,7 +130,10 @@ EC.br.blue(str)
 EC.br.magenta(str)
 EC.br.cyan(str)
 EC.br.white(str)
+```
 
+Bright background colors:
+```js
 EC.br.bg.black(str)
 EC.br.bg.red(str)
 EC.br.bg.green(str)
@@ -111,7 +142,10 @@ EC.br.bg.blue(str)
 EC.br.bg.magenta(str)
 EC.br.bg.cyan(str)
 EC.br.bg.white(str)
+```
 
+Styles:
+```js
 EC.reset(str)
 EC.bold(str)
 EC.faint(str)
@@ -120,24 +154,33 @@ EC.underline(str)
 EC.inverse(str)
 EC.hidden(str)
 EC.strike(str)
-
-EC.remove(str)
-
-EC.log(str)
-EC.logBlack(str)
-EC.logRed(str)
-EC.logGreen(str)
-EC.logYellow(str)
-EC.logBlue(str)
-EC.logMagenta(str)
-EC.logCyan(str)
-EC.logWhite(str)
-
-EC.disabled = true|false
 ```
 
-## Browser Console
-Usage is the same as above, and provides an additional UMD bundle (1.35 KB)
+Helpers:
+```js
+EC.remove(str)
+EC.log(...args)
+
+EC.logBlack(...args)
+EC.logRed(...args)
+EC.logGreen(...args)
+EC.logYellow(...args)
+EC.logBlue(...args)
+EC.logMagenta(...args)
+EC.logCyan(...args)
+EC.logWhite(...args)
+
+EC.disabled = true | false
+```
+
+Notes:
+* `EC.log()` joins multiple arguments with spaces before printing
+* Color log methods such as `EC.logRed(...args)` print the result and also return the final string
+* Existing ANSI color sequences are removed before a color log method applies a new color
+
+## Browser
+The package also provides a UMD bundle in `dist/eight-colors.js`.
+
 ```html
 <script src="path-to/eight-colors/dist/eight-colors.js"></script>
 <script>
@@ -145,10 +188,11 @@ Usage is the same as above, and provides an additional UMD bundle (1.35 KB)
     console.log(EC.red('red string'));
 </script>
 ```
+
+Browser consoles do not consistently render ANSI escape sequences as terminal colors. In particular, Firefox DevTools console does not render them as terminal colors, so browser usage is mainly useful when you want the same API shape across environments or need `EC.remove()`.
+
 ![](/scripts/browser.png)
 
-* firefox does not support 
-
 ## Links
-- [https://en.wikipedia.org/wiki/ANSI_escape_code](https://en.wikipedia.org/wiki/ANSI_escape_code)
-- [https://handwiki.org/wiki/ANSI_escape_code](https://handwiki.org/wiki/ANSI_escape_code)
+* https://en.wikipedia.org/wiki/ANSI_escape_code
+* https://handwiki.org/wiki/ANSI_escape_code

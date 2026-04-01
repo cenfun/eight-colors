@@ -1,3 +1,6 @@
+* 1.3.2
+    - fixed `FORCE_COLOR` handling so colors are enabled correctly
+    - improved README
 
 * 1.3.1
     - support env `NO_COLOR` `FORCE_COLOR` and flags `--no-color` `--color`
