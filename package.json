@@ -32,8 +32,8 @@
         "url": "git+https://github.com/cenfun/eight-colors.git"
     },
     "devDependencies": {
-        "eslint": "^9.11.0",
-        "eslint-config-plus": "^2.0.2",
-        "eslint-plugin-html": "^8.1.1"
+        "eslint": "^10.1.0",
+        "eslint-config-plus": "^2.0.4",
+        "eslint-plugin-html": "^8.1.4"
     }
 }
