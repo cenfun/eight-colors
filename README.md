@@ -5,7 +5,7 @@
 ![](https://img.shields.io/github/license/cenfun/eight-colors)
 [![](https://devimg.vercel.app/npm/downloads/eight-colors?label={total}%20downloads/month)](https://www.npmjs.com/package/eight-colors)
 
-![](/scripts/eight-colors.png)
+![](scripts/eight-colors.png)
 
 ## Install
 ```bash
@@ -25,7 +25,8 @@ npm i eight-colors
 * Zero dependencies
 
 ## Quick Start
-CommonJS:
+
+### CommonJS
 ```js
 const EC = require('eight-colors');
 
@@ -38,7 +39,7 @@ console.log(EC.underline('underline text'));
 console.log(EC.green(EC.underline('green underline text')));
 ```
 
-ESM:
+### ESM
 ```js
 import EC from 'eight-colors';
 
@@ -46,14 +47,14 @@ console.log(EC.red('red string'));
 console.log(EC.br.bg.red('bright red background'));
 ```
 
-More examples:
+### More Examples
 ```js
+// remove ANSI escape sequences
 const redString = EC.red('red string');
-console.log(redString);
-
 const plainString = EC.remove(redString);
 console.assert(plainString === 'red string');
 
+// color log helpers: print and return the colored string
 const logged = EC.logRed('string1', 'string2');
 console.assert(EC.remove(logged) === 'string1 string2');
 
@@ -63,28 +64,20 @@ EC.logYellow('log yellow');
 EC.logCyan('log cyan');
 EC.logWhite('log white');
 
+// log with multiple arguments
 EC.log('log 2 arguments', EC.red('2'));
 EC.logGreen('logGreen 2 arguments', '2');
 EC.logMagenta('logMagenta 3 arguments', EC.red('2'), '3');
-
-EC.disabled = true;
-EC.logRed('disabled = true log default');
-
-EC.disabled = false;
-EC.logRed('disabled = false log red');
 ```
 
-![](/scripts/screenshots.png)
+![](scripts/screenshots.png)
 
 ## Color Control
-`EC.disabled` controls whether ANSI escape sequences are added at runtime.
+`EC.disabled` controls whether ANSI escape sequences are added at runtime:
 
 ```js
-EC.disabled = true;
-EC.logRed('disabled = true log default');
-
-EC.disabled = false;
-EC.logRed('disabled = false log red');
+EC.disabled = true;   // all color functions return plain strings
+EC.disabled = false;  // back to normal
 ```
 
 On module initialization, `eight-colors` also reads environment variables and CLI flags:
@@ -169,8 +162,11 @@ EC.logBlue(...args)
 EC.logMagenta(...args)
 EC.logCyan(...args)
 EC.logWhite(...args)
+```
 
-EC.disabled = true | false
+Property:
+```js
+EC.disabled  // boolean, default: false
 ```
 
 Notes:
@@ -191,7 +187,7 @@ The package also provides a UMD bundle in `dist/eight-colors.js`.
 
 Note: Most browser consoles do not render ANSI escape sequences as colors (Firefox DevTools ignores them entirely; Chrome has limited support). The browser bundle is mainly useful when you want the same API shape across environments or need `EC.remove()` to strip ANSI sequences.
 
-![](/scripts/browser.png)
+![](scripts/browser.png)
 
 ## Links
 * https://en.wikipedia.org/wiki/ANSI_escape_code
