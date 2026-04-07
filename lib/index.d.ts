@@ -16,7 +16,7 @@ interface BR extends IEightColors {
 }
 
 // console log
-type LogHandler = (str: string) => void;
+type LogHandler = (...args: any[]) => void;
 type ColorLogHandler = (...args: any[]) => string;
 
 declare interface EightColors extends IEightColors {
