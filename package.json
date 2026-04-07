@@ -33,7 +33,6 @@
     },
     "devDependencies": {
         "eslint": "^10.2.0",
-        "eslint-config-plus": "^2.0.4",
-        "eslint-plugin-html": "^8.1.4"
+        "eslint-config-plus": "^2.0.4"
     }
 }
