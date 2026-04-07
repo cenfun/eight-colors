@@ -174,9 +174,9 @@ EC.disabled = true | false
 ```
 
 Notes:
-* `EC.log()` joins multiple arguments with spaces before printing
-* Color log methods such as `EC.logRed(...args)` print the result and also return the final string
-* Existing ANSI color sequences are removed before a color log method applies a new color
+* `EC.log()` joins multiple arguments with spaces before printing (no return value)
+* `EC.logRed(...args)` and other color log methods print the result and also return the colored string
+* Color log methods remove existing ANSI sequences from arguments before applying the new color
 
 ## Browser
 The package also provides a UMD bundle in `dist/eight-colors.js`.
@@ -189,7 +189,7 @@ The package also provides a UMD bundle in `dist/eight-colors.js`.
 </script>
 ```
 
-Browser consoles do not consistently render ANSI escape sequences as terminal colors. In particular, Firefox DevTools console does not render them as terminal colors, so browser usage is mainly useful when you want the same API shape across environments or need `EC.remove()`.
+Note: Most browser consoles do not render ANSI escape sequences as colors (Firefox DevTools ignores them entirely; Chrome has limited support). The browser bundle is mainly useful when you want the same API shape across environments or need `EC.remove()` to strip ANSI sequences.
 
 ![](/scripts/browser.png)
 
